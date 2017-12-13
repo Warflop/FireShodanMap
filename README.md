@@ -1,5 +1,5 @@
 # FireShodanMap
-FireShodanMap is a Realtime map that integrates [Firebase](https://firebase.google.com/) and [Shodan](https://www.shodan.io). A search is done using Shodan searching vulnerable devices and they are showed on the map for analysis. All data updated in Firebase are Realtime.
+FireShodanMap is a Realtime map that integrates [Firebase](https://firebase.google.com/) and [Shodan](https://www.shodan.io). A search is carried out using Shodan searching vulnerable devices and they are showed on the map for analysis. All data updated in Firebase are Realtime.
 
 ![ScreenShot](https://raw.githubusercontent.com/Warflop/FireShodanMap/master/screenshot.png)
 
