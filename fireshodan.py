@@ -4,6 +4,10 @@ import requests
 import shodan
 import time
 import os
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8') #fix for output errors
+
 
 def get_lat_lon(ip):
 
@@ -28,9 +32,9 @@ def searching():
                 for result in results['matches']:
                         searching = result['ip_str']
 			lat,lng, country_name = get_lat_lon(searching)
-
-			data = {"id": count,  "ip": searching, "lat" : lat, "lng" : lng, "Country" : country_name}
-			print "[+] IP: " + str(searching) + ", Latitude: " + str(lat) + ", Longitude: " + str(lng) + ", Country: " + str(country_name)
+                        port = result['port']
+			data = {"id": count,  "ip": searching, "lat" : lat, "lng" : lng, "Country" : country_name, "Port" : port}
+			print "[+] IP: " + str(searching) + ", Port: " + str(port) + ", Latitude: " + str(lat) + ", Longitude: " + str(lng) + ", Country: " + str(country_name)
 			db.child("shodanmap").push(data)
 			count = count + 1
 
@@ -40,27 +44,29 @@ def searching():
 
 if __name__ == "__main__":
 
-	#Ask for the TERM_TO_SEARCH
-	SHODAN_API_KEY = "API_SHODAN_KEY"
-	TERM_TO_SEARCH = raw_input("Please enter Search String: ")
+	SHODAN_API_KEY = "SHODAN_KEY_HERE"
+        print('the basic searches you can use: \n FUN: Webcam / Webcamxp / Cams / Netcam / Android cam / default password \n IND: SCADA / ICS / PLC / DCS / RTU \n CTY: Germany / etc. \n CSTM: Android cam -Authentification / SCADA -Authentification ')
+	TERM_TO_SEARCH =  raw_input("Please enter Search String: ")
 
 	config = {
 
-        	"apiKey": "KEY_FIREBASE_HERE",
-        	"authDomain": "shodanmap.firebaseapp.com",
-        	"databaseURL": "https://shodanmap.firebaseio.com",
-        	"storageBucket": "shodanmap.appspot.com",
-        	"serviceAccount": "FILE_WITH_KEY.json"
+        	"apiKey": "FIREBASE_KEY_HERE",
+        	"authDomain": "FIREBASE_DATA_HERE",
+        	"databaseURL": "FIREBASE_DATA_HERE",
+        	"storageBucket": "FIREBASE_DATA_HERE",
+        	"serviceAccount": "FIREBASE_SERVERKEY_JSON_HERE.json"
 
 	}
 
         firebase = pyrebase.initialize_app(config)
         db = firebase.database()
-	#Delete DB bevore Filling
+        #Delete DB bevore Filling
 	deletedb = raw_input("Delte DB ? y/n: ")
 	if deletedb == 'y':
-	   db.child("shodanmap").remove()
+           db.child("shodanmap").remove()
+           print('Starting Search..')
 	   searching()
         else:
+           print('Starting Search..')
            searching()
 	searching()
