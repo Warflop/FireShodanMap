@@ -57,8 +57,12 @@ if __name__ == "__main__":
         firebase = pyrebase.initialize_app(config)
         db = firebase.database()
 	#Delete DB bevore Filling
-	result = firebase.delete('/shodanmap',None)
-        
+	deletedb = raw_input("Delte DB ? y/n: ")
+	if deletedb == 'y':
+	   result = firebase.delete('/shodanmap',None)
+	   searching()
+        else:
+           searching()
         #firebase = firebase.FirebaseApplication('LINK/')
         #result = firebase.delete('/DBNM',None)
 	searching()
