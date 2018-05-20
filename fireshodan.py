@@ -59,7 +59,8 @@ if __name__ == "__main__":
 	#Delete DB bevore Filling
 	deletedb = raw_input("Delte DB ? y/n: ")
 	if deletedb == 'y':
-	   result = firebase.delete('/shodanmap',None)
+	   #result = firebase.delete('/shodanmap',None)
+	   firebase.delete('/shodanmap',None)
 	   searching()
         else:
            searching()
