@@ -5,11 +5,11 @@ FireShodanMap is a Realtime map that integrates [Firebase](https://firebase.goog
 
 # Changes
 
-We have a file named "fireshodan.py" responsible for fill Firebase database, we need to change:
+We have a file named "fireshodan.py" responsible for filling the Firebase database, we need to change:
 
 <pre>
-[+] <b>FILE_WITH_KEY.json</b> (Open the Credentials tab and click <b>Create credentials</b>. You want the API key option. Create a server key. It will automatically download as a *.json file)
-[+] <b>KEY_FIREBASE_HERE</b> (Open the Firebase Project and click <b>Add Firebase to your web application</b>)
+[+] <b>FILE_WITH_KEY.json</b> (Open the Credentials tab and click <b>Create credentials</b>.Create a server key. It will automatically download as a *.json file)
+[+] <b>KEY_FIREBASE_HERE</b> & Following Data (Open the Firebase Project and click <b>Add Firebase to your web application</b>)
 [+] <a href="https://account.shodan.io/">API_SHODAN_KEY</a>
 </pre>
 
