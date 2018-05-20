@@ -63,6 +63,4 @@ if __name__ == "__main__":
 	   searching()
         else:
            searching()
-        #firebase = firebase.FirebaseApplication('LINK/')
-        #result = firebase.delete('/DBNM',None)
 	searching()
