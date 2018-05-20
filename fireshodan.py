@@ -40,8 +40,12 @@ def searching():
 
 if __name__ == "__main__":
 
+	#Ask for the TERM_TO_SEARCH
+	echo " Please Enter Term to Search "
+	read Terms
+	
 	SHODAN_API_KEY = "API_SHODAN_KEY"
-	TERM_TO_SEARCH = "TERM_TO_SEARCH"
+	TERM_TO_SEARCH = Terms
 
 	config = {
 
@@ -55,5 +59,7 @@ if __name__ == "__main__":
 
         firebase = pyrebase.initialize_app(config)
         db = firebase.database()
+	#Delete DB bevore Filling
+	result = firebase.delete('/shodanmap',None)
 
 	searching()
