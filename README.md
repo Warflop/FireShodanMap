@@ -27,7 +27,7 @@ You can see your data now. If you remove any data your map will update automatic
 </pre>
 # Greetz
 <pre>
-Wilson Neto
+<a href="https://github.com/netoolii">Neto Oliveira</a>
 <a href="https://github.com/AleBarreto">Alessandro Barreto</a>
 <a href="https://github.com/GabrielCarneiroDeveloper">Gabriel Carneiro</a>
 </pre>
